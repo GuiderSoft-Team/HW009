@@ -8,7 +8,8 @@ public class Musluk {
 
     public void setSure(int sure) {
         if (sure <= 0) {
-            System.err.println("Süre 0 veya 0'dan küçük olmamalıdır");
+            System.err.println("Süre negatif olamaz");
+            System.exit(1);
         }
         if (dolduranMi) {
             this.sure = sure;
