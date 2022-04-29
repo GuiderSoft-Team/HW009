@@ -1,0 +1,52 @@
+Task:
+Yapılması gereken görev aşağıdaki talimatları içermektedir.
+
+1. Musluk isimli bir sınıf tasarlanacaktır. Erişim belirteci private
+olan iki üye değişkene ihtiyaç vardır. Birincisi sure isimli tam sayı
+değişkendir. İkincisi dolduranMi isimli boolean değişkendir. Bu değişkenin
+değeri true ise musluk havuzu dolduruyor değilse boşaltıyor anlamına gelir.
+
+2. Bu iki değişkenin getter/setter metotları tanımlanmalıdır. sure değişkeni
+için tanımlanacak setter metodunda şu kontroller yapılmalıdır;
+    - parametre olarak gelen sure değişkeni sıfırdan büyük olmalıdır.
+    - Ayrıca eğer dolduranMi değişkeni true ise sure pozitif olmalı,
+    değilse negatif olmalıdır.
+
+3. Her iki üyeyi de parametre olarak alan Constructor tanımlanmalıdır.
+Bu Constructor içerisinde önce dolduranMi değişkeni assign edilmeli,
+daha sonra sure değişkeninin assign edilmesi için setter metodu kullanılmalıdır.
+
+4. Parametresi olmayan Constructor tanımlanmalıdır.
+Bu Constructor içerisinde ilk komut olarak parametreli Constructor çağırılmalı
+ve parametre olara 1 ve true değerleri geçilmelidir.
+
+5. Havuz isimli sınıf tasarlanmalıdır. Erişim belirteci private olan
+List<Musluk> tipinden musluklar isimli üye değişken tanımlanmalıdır.
+
+6. Parametresiz Constructor tanımlanmalıdır. İçerisinde musluklar değişkeni
+new operatörü kullanılarak initialize edilmelidir.
+
+7. Musluk tipinden musluk isimli parametresi olan, dönüş tipi void olan
+muslukEkle metodu tasarlanmalıdır. musluklar.add metodu kullanılarak
+musluklar listesine yeni bir musluk eklenmelidir.
+
+8. Dönüş tipi double olan problemiCoz isimli public metot tanımlanmalıdır.
+Bu metodun içerisinde öncelikle double tipinde sonuc isimli local bir değişken
+tanımlanmalı ve 0.0 assign edilmelidir. Foreach kullanılarak musluklar listesi üzerinde
+hareket edilmeli ve sonuc+=1.0/musluk.getSure() formülü (1/x=1/sure1+1/sure2+...)
+ile sonuc elde edilmelidir.
+
+9. Elde edilen sonuc deişkeni 1/x olduğu için ters çevrilmelidir. Yani
+[sonuc>0?Math.pow(sonuc,-1):sonuc] değeri metottan return edilmelidir.
+
+10. Main class ve main metodu içerisinde aşağıdaki kodlar çalıştırılmalı ve gereken
+çıktı alınmalıdır.
+
+        Havuz havuz=new Havuz();
+        havuz.muslukEkle(new Musluk(18,false));
+        havuz.muslukEkle(new Musluk(9,true));
+        havuz.muslukEkle(new Musluk(2,true));
+        System.out.printf("Sonuç : %5.2f",havuz.problemiCoz());
+
+        output:
+        Sonuç :  1,80
